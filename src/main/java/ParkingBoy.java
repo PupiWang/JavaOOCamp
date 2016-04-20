@@ -18,14 +18,14 @@ public class ParkingBoy {
         return null;
     }
 
-    public Car getCar(ParkingTicket parkingTicket) throws InvalidTicket {
+    public Car getCar(ParkingTicket parkingTicket) throws InvalidTicketException {
         for (ParkingLot parkingLot : parkingLots) {
             try {
                 return parkingLot.getCar(parkingTicket);
-            } catch (InvalidTicket invalidTicket) {
+            } catch (InvalidTicketException invalidTicket) {
                 invalidTicket.printStackTrace();
             }
         }
-        throw new InvalidTicket();
+        throw new InvalidTicketException();
     }
 }

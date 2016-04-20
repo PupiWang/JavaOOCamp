@@ -42,18 +42,18 @@ public class ParkingBoyTest {
     }
 
     @Test
-    public void should_get_car_successfully() throws InvalidTicket {
+    public void should_get_car_successfully() throws InvalidTicketException {
         ParkingTicket parkingTicket = parkingBoy.park();
         assertNotNull(parkingBoy.getCar(parkingTicket));
     }
 
-    @Test(expected = InvalidTicket.class)
-    public void fail_to_get_car() throws InvalidTicket {
+    @Test(expected = InvalidTicketException.class)
+    public void fail_to_get_car() throws InvalidTicketException {
         parkingBoy.getCar(new ParkingTicket());
     }
 
     @Test
-    public void should_get_car_successfully_from_parking_lot_B() throws InvalidTicket {
+    public void should_get_car_successfully_from_parking_lot_B() throws InvalidTicketException {
         parkingBoy.park();
         ParkingTicket parkingTicket = parkingBoy.park();
         assertNotNull(parkingBoy.getCar(parkingTicket));

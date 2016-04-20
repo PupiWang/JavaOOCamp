@@ -20,9 +20,9 @@ public class ParkingLot {
         }
     }
 
-    public Car getCar(ParkingTicket parkingTicket) throws InvalidTicket {
+    public Car getCar(ParkingTicket parkingTicket) throws InvalidTicketException {
         if (validParkingTickets.indexOf(parkingTicket) == -1) {
-            throw new InvalidTicket();
+            throw new InvalidTicketException();
         }
         validParkingTickets.remove(validParkingTickets.indexOf(parkingTicket));
         return new Car();
